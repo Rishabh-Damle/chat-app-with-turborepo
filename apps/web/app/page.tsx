@@ -1,6 +1,9 @@
+"use client";
 import { TextInput } from "@repo/ui/text-input";
 import { Button } from "@repo/ui/button";
+import { useRouter } from "next/navigation";
 export default function Home() {
+  const router = useRouter();
   return (
     <div
       style={{
@@ -19,7 +22,14 @@ export default function Home() {
         }}
       >
         <TextInput placeholder="give it a try"></TextInput>
-        <Button messsage="Join a room"></Button>
+        <button
+          onClick={() => {
+            router.push("/chat/123");
+          }}
+          style={{ padding: 7, cursor: "pointer" }}
+        >
+          join a room
+        </button>
       </div>
     </div>
   );
